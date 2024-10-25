@@ -69,3 +69,16 @@ app.get('/name', (req, res) => {
 });
 
 app.use(express.static('public'));
+
+//Exercise8
+//Body parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+//POST request handler
+app.post('/name', (req, res) => {
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
+});
