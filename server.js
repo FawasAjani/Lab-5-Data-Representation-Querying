@@ -1,15 +1,26 @@
-//Server.js
+//server.js
+//Buildin a server
+
+//import express libary
 const express = require('express');
+
+//create an express called App
 const app = express();
-const port = 4000;
-//url roots point
+
+//Set variable port 3000
+const port = 3000;
+//prints out Welcome to Data Resprentation & Querting
 app.get('/', (req, res) => {
-    res.send('Hello World');//Http Response
+    res.send('Welcome to Data Respresentation & Querying');
 });
 
-app.get('/', (req, res) => {
-    res.send('Welcome to Data Respresentation & Querying');//Http Response
+
+//Exercise 4: Route with URL Parameters
+
+//Set up route for my first name page
+app.get('/hello/:fname', (req, res) => {
+    const fname = req.params.fname;
+    res.send(`Hello ${fname}`);
 });
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+
+//Exercise 5: Return JsonData
