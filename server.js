@@ -52,3 +52,20 @@ app.get('/api/movies', (req, res) => {
     ];
     res.status(201).json({ myMovies:movies });
 });
+
+//Exercise 6: Serving Static HTML
+//Serve the HTML file
+const path = require('path');
+
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+//Exercise 7: Handling GET 
+app.get('/name', (req, res) => {
+    const firstname = req.query.firstname;
+    const lastname = req.query.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
+});
+
+app.use(express.static('public'));
