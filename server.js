@@ -1,5 +1,5 @@
 //server.js
-//Buildin a server
+//Building a  express server
 
 //import express libary
 const express = require('express');
@@ -7,8 +7,8 @@ const express = require('express');
 //create an express called App
 const app = express();
 
-//Set variable port 3000
-const port = 3000;
+//Set variable port 4000
+const port = 4000;
 //prints out Welcome to Data Resprentation & Querting
 app.get('/', (req, res) => {
     res.send('Welcome to Data Respresentation & Querying');
